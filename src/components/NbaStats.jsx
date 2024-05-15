@@ -1,13 +1,9 @@
 import React from 'react'
 import {useState, useEffect, useRef} from 'react'
 import { Table, ModalToggleButton, Modal, ModalHeading} from '@trussworks/react-uswds';
-import {Card} from '@material-ui/core';
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-import CardActions from '@mui/material/CardActions';
-import Button from '@mui/material/Button';
+import { Card } from "flowbite-react";
+
 import PopUp from './PopUp';
-import CardMedia from '@mui/material/CardMedia';
 
 
 export default function NbaStats(){
@@ -40,69 +36,43 @@ export default function NbaStats(){
         <>
         {/*  */}
         <Table striped fullWidth className="bg-primary-lighter">
-           <thead>
-               <tr>
-                <strong>
-                    <th className="text-centered">Welcom to my Fantasy NBA Site!</th>
-                    </strong>
-                  
-               </tr>
-           </thead>
-           <tbody>
+    <thead>
+        <tr>
            
-               {values.map((dir) => {
-                   return (
-                       <tr  dir={dir} key={dir.id}> { }
-                          < Card sx={{ maxWidth: 500 }}>
-                            {}
-                          <CardContent>
-                        
-                                <Typography gutterBottom variant="h5" component="div">
-                                {dir.player.firstname+" ' "+dir.player.lastname}
-                                </Typography>
-                                <Typography variant="body2" color="text.secondary">
-                            
+        </tr>
+    </thead>
+    <tbody>
+        {values.map((dir) =>{
+      return (  
+      <tr key={dir.id} dir={dir}>{/** need to set key so react knows which elements in the DOM to modify  */}
+            <Card
+      className="max-w-sm"
+      imgAlt="Meaningful alt text for an image that is not purely decorative"
+      renderImage={() => <img width={250} height={250} src={dir.team.logo}alt="image 1" />}
 
-                           <br></br>
-
-                          
-                           <br></br>
-                           <CardMedia
-                                sx={{ height: 300, width: 250 }}
-
-                                title= {dir.team.name}
-                                image={dir.team.logo}
-                                
-                            />
-                                </Typography>
-                            </CardContent> 
-                            <ModalToggleButton onClick={()=>setModalData(dir)} modalRef={modalRef} opener>{dir.player.firstname}'s stats</ModalToggleButton>
-                            <CardActions>
-                            
-
-                            </CardActions>
-                            
-
-                           </Card>
-                           
-                       </tr>
-                   );
-               })}
-                           
-           </tbody>
-           
+       >
         
-           
-       </Table>
-       <Modal  aria-modal='true' id='movie-form-modal' ref={modalRef}>
-                            <ModalHeading id='movie-form-modal-heading'>Player Stats</ModalHeading>
-                            <PopUp playerId={modalData} />
-                            </Modal>
-       
+      <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+      {dir.player.firstname+" ' "+dir.player.lastname}
+      {/* <img align="center" src={dir.team.logo} width='100px'/> */}
+      </h5>
+      <ModalToggleButton onClick={()=>setModalData(dir)} modalRef={modalRef} opener>{dir.player.firstname}'s stats</ModalToggleButton>
+
+    </Card>
+        
+        </tr>
+      );
+})}
+        
+    </tbody>
+</Table>
+   <Modal  aria-modal='true' id='movie-form-modal' ref={modalRef}>
+   <ModalHeading id='movie-form-modal-heading'>Player Stats</ModalHeading>
+   <PopUp playerId={modalData} />
+   </Modal>
        
        </>
     )
 
 
-    
 }
