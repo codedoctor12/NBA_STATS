@@ -8,21 +8,23 @@
     "build": "vite build",
     "postinstall": "npm run build",
     "serve-heroku": "vite --host 0.0.0.0 --port $VITE_REACT_APP_PORT preview",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
-    },
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "start": "serve -s dist",
+    "heroku-postbuild": "npm run build"
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
     "@syncfusion/ej2-layouts": "^25.2.3",
     "@trussworks/react-uswds": "^9.0.0",
+    "@vitejs/plugin-react": "^4.2.1",
     "bootstrap": "^5.3.3",
     "flowbite-react": "^0.9.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "serve": "^14.2.3",
     "vite": "^5.2.0"
-
   },
   "devDependencies": {
     "@types/react": "^18.2.66",
