@@ -6,8 +6,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '@trussworks/react-uswds/lib/uswds.css';
 
 import NbaStats from './components/NbaStats'
+import Upload from './components/Upload';
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
