@@ -5,7 +5,7 @@ import PopUp from './PopUp';
 import {Card} from 'flowbite-react';
 import CSV from './players.csv';
 import './Grid.css'
-const gallery = Object.values(import.meta.glob('@assets/img/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, as: 'url' }))
+const gallery = Object.values(import.meta.glob('@public/img/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url',import: 'default' }))
 const tempImage = gallery[0].substring(1,16)
 console.log(tempImage)
 export default function NbaStats(){

@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), dsv(),],
   resolve: {
     alias: {
-      "@assets": path.resolve(__dirname, "src/assets"),
+      "@public": path.resolve(__dirname, "src/public"),
     },
   },
   server: {
