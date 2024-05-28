@@ -11,7 +11,8 @@ console.log(tempImage)
 var temp = 'assets/101108-DjOO6dK8';
 const pre = gallery[0].substring(1,7);
 const suff = gallery[0].substring(gallery[0].indexOf("-"),gallery[0].length)
-
+const f =  gallery.filter(str=>str.includes("1630534"))
+console.log(f)
 console.log("pre "+pre+" suff "+suff);
 export default function NbaStats(){
     const [modalData, setModalData] = useState(undefined);
@@ -29,7 +30,7 @@ export default function NbaStats(){
               <Card
       className="max-w-sm"
       imgAlt="Meaningful alt text for an image that is not purely decorative"
-      renderImage={() => <img width={50} height={50} src={pre+ "/1630534-Bu_uCmrN.png"}  alt="image 1" />}
+      renderImage={() => <img width={50} height={50} src={gallery.filter(str=>str.includes(CSV[j].playerid))}  alt="image 1" />}
        >
        
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
