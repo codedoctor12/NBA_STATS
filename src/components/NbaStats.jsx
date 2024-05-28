@@ -10,7 +10,7 @@ const tempImage = gallery[0].substring(1,7)
 console.log(tempImage)
 var temp = 'assets/101108-DjOO6dK8';
 const pre = gallery[0].substring(0,7);
-const suff = gallery[0].substring(temp.indexOf("-"),temp.length)
+const suff = gallery[0].substring(gallery[0].indexOf("-"),gallery[0].length)
 
 console.log("pre "+pre+" suff "+suff);
 export default function NbaStats(){
@@ -29,7 +29,7 @@ export default function NbaStats(){
               <Card
       className="max-w-sm"
       imgAlt="Meaningful alt text for an image that is not purely decorative"
-      renderImage={() => <img width={50} height={50} src={pre+ CSV[j].playerid+suff}  alt="image 1" />}
+      renderImage={() => <img width={50} height={50} src={pre+ "/"+CSV[j].playerid+suff}  alt="image 1" />}
        >
        
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
