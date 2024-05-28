@@ -6,8 +6,13 @@ import {Card} from 'flowbite-react';
 import CSV from './players.csv';
 import './Grid.css'
 const gallery = Object.values(import.meta.glob('@assets/img/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url',import: 'default' }))
-const tempImage = gallery[0].substring(1,23)
+const tempImage = gallery[0].substring(1,7)
 console.log(tempImage)
+var temp = 'assets/101108-DjOO6dK8';
+const pre = gallery[0].substring(0,7);
+const suff = gallery[0].substring(temp.indexOf("-"),temp.length)
+
+console.log("pre "+pre+" suff "+suff);
 export default function NbaStats(){
     const [modalData, setModalData] = useState(undefined);
     const modalRef = useRef()
@@ -24,7 +29,7 @@ export default function NbaStats(){
               <Card
       className="max-w-sm"
       imgAlt="Meaningful alt text for an image that is not purely decorative"
-      renderImage={() => <img width={50} height={50} src={"src/public/assets/img/" + CSV[j].playerid+".png"}  alt="image 1" />}
+      renderImage={() => <img width={50} height={50} src={pre+ CSV[j].playerid+suff}  alt="image 1" />}
        >
        
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
