@@ -9,7 +9,7 @@ const gallery = Object.values(import.meta.glob('@assets/img/*.{png,jpg,jpeg,PNG,
 const tempImage = gallery[0].substring(1,7)
 console.log(tempImage)
 var temp = 'assets/101108-DjOO6dK8';
-const pre = gallery[0].substring(0,7);
+const pre = gallery[0].substring(1,7);
 const suff = gallery[0].substring(gallery[0].indexOf("-"),gallery[0].length)
 
 console.log("pre "+pre+" suff "+suff);
