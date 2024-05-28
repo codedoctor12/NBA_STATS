@@ -24,7 +24,7 @@ export default function NbaStats(){
               <Card
       className="max-w-sm"
       imgAlt="Meaningful alt text for an image that is not purely decorative"
-      renderImage={() => <img width={50} height={50} src={tempImage+CSV[j].playerid+".png"}  alt="image 1" />}
+      renderImage={() => <img width={50} height={50} src={"src/public/assets/img/" + CSV[j].playerid+".png"}  alt="image 1" />}
        >
        
       <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
