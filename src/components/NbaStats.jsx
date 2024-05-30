@@ -5,6 +5,7 @@ import PopUp from './PopUp';
 import {Card} from 'flowbite-react';
 import CSV from './players.csv';
 import './Grid.css'
+import '@trussworks/react-uswds/lib/uswds.css';
 const gallery = Object.values(import.meta.glob('@assets/img/*.{png,jpg,jpeg,PNG,JPEG}', { eager: true, query: '?url',import: 'default' }))
 const tempImage = gallery[0].substring(1,7)
 console.log(tempImage)
