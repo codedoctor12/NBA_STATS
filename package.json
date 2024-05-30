@@ -29,6 +29,7 @@
     "react-csv": "^2.2.2",
     "react-dom": "^18.2.0",
     "react-papaparse": "^4.4.0",
+    "react-router-dom": "^6.23.1",
     "serve": "^14.2.3",
     "vite": "^5.2.0"
   },
